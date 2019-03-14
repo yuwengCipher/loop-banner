@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .clearfix{
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+        }
+        .left{
+            float:left;
+        }
+        .wrapper{
+            width:750px;
+            height:160px;
+            overflow:hidden;
+            position: relative;
+            cursor: hand;
+        }
+        .btn{
+            display:inline-block;
+            width:80px;
+            height:50px;
+            position: absolute;
+            background: #416e96;
+            z-index:10000;
+            cursor:pointer;
+        }
+        .prev{
+            left:20px;
+            top:55px;
+        }
+        .next{
+            right:20px;
+            top:55px;
+        }
+        ul{
+            height:100%;
+        }
+        li{
+            width:750px;
+            height:160px;
+            list-style: none;
+            font-size: 30px;
+            background: #d9c638;
+        }
+        img{
+            width:100%;
+        }
+        #pagination-wrapper{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            padding: 0 40%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #pagination-wrapper p{
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+        }
+        #pagination-wrapper p.active{
+            background: #ff2f3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="btn prev" id="prev"></span>
+        <ul class="clearfix" id="container">
+            <li slide-index="1" class="left li1">
+                slide1
+            </li>
+            <li slide-index="2" class="left li2">
+                slide2
+            </li>
+            <li slide-index="3" class="left li3">
+                slide3
+            </li>
+            <li slide-index="4" class="left li4">
+                slide4
+            </li>
+        </ul>
+        <span class="btn next"></span>
+        <div id="pagination-wrapper"></div>
+    </div>
+    <script src="loop.js"></script>
+    <script>
+        new Loop('container', {
+            autoplay: false
+        });
+    </script>
+</body>
+</html>
